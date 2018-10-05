@@ -1,0 +1,25 @@
+print (" GUESS THE CORRECT NUMBER!! \nA random number will be selected from 1 to 10.\n")
+
+from random import *
+GenNum = randint(1, 10)
+right = False
+count = 3
+while not right :
+    guess = int(input("Enter guess number "))
+    if guess == GenNum:
+        print("CONGRATS YOU GOT IT\n")
+        right = True
+    elif guess > GenNum:
+        print ("TO HIGH\n")
+        count-=1
+    elif guess < GenNum:
+        print ("TO LOW\n")
+        count-=1
+
+    if count==0:
+        print("SORRY!YOU LOST")
+        print("Correct answer is")
+        print(GenNum)
+        break
+
+
